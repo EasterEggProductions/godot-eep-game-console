@@ -1,0 +1,284 @@
+{
+    "greg_insertion": {
+        "executeCode": "AUTOFORWARD questToken(add,mom)",
+        "speech": "Hello, I am Greg",
+        "replies": [
+            {
+                "responseSay": "met Jim first",
+                "leadingNode": "greg_greeting_initialMetJim",
+                "requirement": "questToken(metJim) !questToken(metGreg)",
+                "executeCode": "questTokenAdd(metGreg)"
+            },
+            {
+                "responseSay": "first meet",
+                "leadingNode": "greg_greeting_initial",
+                "requirement": "!questToken(metGreg)",
+                "executeCode": "questTokenAdd(metGreg)"
+            },
+            {
+                "responseSay": "meet again (default)",
+                "leadingNode": "greg_greeting_default",
+                "requirement": "questToken(metGreg)",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_insertion": {
+        "executeCode": "AUTOFORWARD",
+        "speech": "Hello! I am Jim!",
+        "replies": [
+            {
+                "responseSay": "Met Greg First",
+                "leadingNode": "jim_greeting_initialMetGreg",
+                "requirement": "!questToken(metJim) questToken(metGreg)",
+                "executeCode": "questTokenAdd(metJim)"
+            },
+            {
+                "responseSay": "first meet",
+                "leadingNode": "jim_greeting_initial",
+                "requirement": "!questToken(metJim)",
+                "executeCode": "questTokenAdd(metJim)"
+            },
+            {
+                "responseSay": "meet again (default)",
+                "leadingNode": "jim_greeting_default",
+                "requirement": "questToken(metJim)",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_greeting_initial": {
+        "executeCode": "questTokenAdd(metGreg)",
+        "speech": "I am Greg. I have not seen you before, so let me give you some advice; don't trust my brother over there, Jim. ",
+        "replies": [
+            {
+                "responseSay": "Ok",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_greeting_initial": {
+        "executeCode": "questToken add metJim",
+        "speech": "Hi friend! Call me Jim! It looks like you are new to the area, and I can help you out with some work in the area. Let me give you a bit of advice, don't talk to Greg over there. We used to be brothers, until he stole my ability to rhyme on purpose!",
+        "replies": [
+            {
+                "responseSay": "Ok",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_greeting_initialMetJim": {
+        "executeCode": "",
+        "speech": "I saw you talking to Jim over there. What did that good for nothing lowlife say? Did he tell you to- nevermind. I am Greg, and you would be wise to keep your dealings away from Jim.",
+        "replies": [
+            {
+                "responseSay": "Ok.",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_greeting_initialMetGreg": {
+        "executeCode": "",
+        "speech": "I see you have met Greg. He is a dirty thief, he stole my ability to rhyme on purpose. Pay him no mind, I can provide any of the services you need.",
+        "replies": [
+            {
+                "responseSay": "Neat.",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_greeting_default": {
+        "executeCode": "",
+        "speech": "Nice to see you again, %PLAYERNAME. SAID GREG",
+        "replies": [
+            {
+                "responseSay": "Quests?",
+                "leadingNode": "greg_questMenu",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_greeting_default": {
+        "executeCode": "",
+        "speech": "Nice to see you again, %PLAYERNAME. SAID JIM",
+        "replies": [
+            {
+                "responseSay": "Quests?",
+                "leadingNode": "jim_questMenu",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_questMenu": {
+        "executeCode": "",
+        "speech": "Greg Quest menu",
+        "replies": [
+            {
+                "responseSay": "Quest 1",
+                "leadingNode": "greg_questOffer_01",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Quest 2",
+                "leadingNode": "greg_questOffer_02",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Quest 3",
+                "leadingNode": "greg_questOffer_03",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_questMenu": {
+        "executeCode": "",
+        "speech": "Jim quest Menu",
+        "replies": [
+            {
+                "responseSay": "Quest 1",
+                "leadingNode": "jim_questOffer_01",
+                "requirement": "!questToken(jim_quest_01.started) !questToken(jim_quest_01.complete)",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Quest 2",
+                "leadingNode": "jim_questOffer_02",
+                "requirement": "!questToken(jim_quest_02.started) !questToken(jim_quest_02.complete questToken(jim_quest_01.complete)",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Quest 3",
+                "leadingNode": "jim_questOffer_03",
+                "requirement": "questToken(jim_quest_02.complete !questToken(jim_quest_03.started)",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_questOffer_01": {
+        "executeCode": "",
+        "speech": "Greg quest 1",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": "questGive(quest2)"
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_questOffer_02": {
+        "executeCode": "",
+        "speech": "Greg quest 2",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "greg_questOffer_03": {
+        "executeCode": "",
+        "speech": "Greg quest 3",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_questOffer_01": {
+        "executeCode": "",
+        "speech": "Jim quest 1",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_questOffer_02": {
+        "executeCode": "",
+        "speech": "Jim quest 2",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "jim_questOffer_03": {
+        "executeCode": "",
+        "speech": "Jim quest 3",
+        "replies": [
+            {
+                "responseSay": "Accept",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Deny",
+                "leadingNode": "",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    }
+}

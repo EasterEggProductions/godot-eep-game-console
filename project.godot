@@ -1,0 +1,20 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="EEP Game Console"
+config/description="A Godot implementation of the Easter Egg Productions game console. Various other tools link to it, and it is loaded as a singleton, so it must be activated as an autoload. "
+run/main_scene="uid://71y5j04d14xq"
+config/features=PackedStringArray("4.5")
+
+[autoload]
+
+console="*res://addons/EEP_Console/eep_game_console.tscn"

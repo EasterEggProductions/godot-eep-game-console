@@ -1,0 +1,236 @@
+{
+    "npc1_insertion_0": {
+        "executeCode": "questTokenAdd('startQuestTwo')",
+        "speech": "Pick an Captain to talk to.",
+        "replies": [
+            {
+                "responseSay": "Admiral Crozier.",
+                "leadingNode": "npc1_chat_0",
+                "requirement": "",
+                "executeCode": "imageShow(img/bg_sky.jpg) imageShow(img/crozier.png)"
+            },
+            {
+                "responseSay": "Captain Tylwyrd Lanniar.",
+                "leadingNode": "npc1_chat_1",
+                "requirement": "",
+                "executeCode": "imageShow(img/bg_sky.jpg) imageShow(img/lanniar.png)"
+            },
+            {
+                "responseSay": "Captain Holly Ilex.",
+                "leadingNode": "node_3",
+                "requirement": "",
+                "executeCode": "imageShow(img/bg_sunset.jpg) imageShow(img/ilex.png)"
+            },
+            {
+                "responseSay": "I should go",
+                "leadingNode": "GOODBYE",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "npc1_chat_0": {
+        "executeCode": "",
+        "speech": "Hail, marine! What brings us together?",
+        "replies": [
+            {
+                "responseSay": "I need to speak to you about my car's extended warranty!",
+                "leadingNode": "node_8",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "You need to speak to me about YOUR extended warranty!",
+                "leadingNode": "node_8",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I accidentally sneezed fire, and guild agents are coming after me.",
+                "leadingNode": "node_9",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I want to speak to someone else.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "npc1_chat_1": {
+        "executeCode": "",
+        "speech": "You salute from the position of 'attention,' sailor. If you were on my crew you would suffer for such insolence.",
+        "replies": [
+            {
+                "responseSay": "My apologies sir. I can only dream of serving a leader such as you one day.",
+                "leadingNode": "node_11",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "How about no?",
+                "leadingNode": "node_10",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_3": {
+        "executeCode": "",
+        "speech": "Hail, sailor!",
+        "replies": [
+            {
+                "responseSay": "Good day, Captain! ",
+                "leadingNode": "node_4",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Go fuck yourself, Captain!",
+                "leadingNode": "node_5",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_4": {
+        "executeCode": "",
+        "speech": "And a good day to you as well! \nHolly salutes you as you part ways.",
+        "replies": [
+            {
+                "responseSay": "Speak to another character.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_5": {
+        "executeCode": "",
+        "speech": "Fuck me yourself you coward! ",
+        "replies": [
+            {
+                "responseSay": "*Attempt to retreat*",
+                "leadingNode": "node_6",
+                "requirement": "",
+                "executeCode": "imageClear(all) imageShow(img/bg_sunset.jpg)"
+            },
+            {
+                "responseSay": "*Slowly undress*",
+                "leadingNode": "node_7",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_6": {
+        "executeCode": "",
+        "speech": "*IT DOES NOT WORK*",
+        "replies": [
+            {
+                "responseSay": "Speak to another character",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_7": {
+        "executeCode": "",
+        "speech": "*Holly smiles as she shoots you*",
+        "replies": [
+            {
+                "responseSay": "I am become dead, and will speak to another character.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_8": {
+        "executeCode": "",
+        "speech": "Marine, what?",
+        "replies": [
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_9": {
+        "executeCode": "",
+        "speech": "Well unfortunately in that case you are under arrest. I would recommend you stay calm and let them help you through this difficult time.",
+        "replies": [
+            {
+                "responseSay": "Sir, what?",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_10": {
+        "executeCode": "",
+        "speech": "*Tylwyrd begins to vibrate at these new heights of insolence*",
+        "replies": [
+            {
+                "responseSay": "Detonate him.",
+                "leadingNode": "node_12",
+                "requirement": "",
+                "executeCode": "imageClear(all) imageShow(img/bg_sunset.jpg)"
+            },
+            {
+                "responseSay": "I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_11": {
+        "executeCode": "",
+        "speech": "Sailor, you do have potential. Join my crew and you will discover the true ecstasy of servitude.",
+        "replies": [
+            {
+                "responseSay": "*run to another captain*",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    },
+    "node_12": {
+        "executeCode": "",
+        "speech": "You didn't need to detonate him really, simply screeching at the resonant frequency of his vibrations caused him to overload beyond what his body could handle. The explosion was so massive it lit up the sky.",
+        "replies": [
+            {
+                "responseSay": "Oh fuck, I should go.",
+                "leadingNode": "npc1_insertion_0",
+                "requirement": "",
+                "executeCode": "imageClear(all)"
+            }
+        ]
+    }
+}

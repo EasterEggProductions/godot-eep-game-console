@@ -1,0 +1,98 @@
+{
+    "default": {
+        "executeCode": "",
+        "speech": "A pleasure to make your acquaintence, spacer",
+        "replies": [
+            {
+                "responseSay": "Solstheim",
+                "leadingNode": "solstheim",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Affairs of Honor",
+                "leadingNode": "affairs_of_honor",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "I should go",
+                "leadingNode": "EXIT",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "affairs_of_honor": {
+        "executeCode": "",
+        "speech": "Native Dunmer and Imperials alike recognize a noble's obligation to answer a challenge of honor. A challenge of honor is a public declaration of a scandal against a private party. Only nobles fight duels, and the higher the rank, the stronger the obligation. Law and custom despises dishonorable duelists. If the victim was bullied, intimidated, or goaded by a stronger party with suspect motives, magistrates often convict the stronger party of foul murder.",
+        "replies": [
+            {
+                "responseSay": "Neat",
+                "leadingNode": "default",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Neat but like how Alucard would say it",
+                "leadingNode": "default",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "solstheim": {
+        "executeCode": "",
+        "speech": "A terrible place, I've heard. There's a boat from Khuul, if you have any reason to go.",
+        "replies": [
+            {
+                "responseSay": "What?",
+                "leadingNode": "default",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Khajiit has no time for this bullshit",
+                "leadingNode": "exit",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "merchant_ins": {
+        "executeCode": "",
+        "speech": "Sir, please step back from the podium and use the commodities terminal.",
+        "replies": [
+            {
+                "responseSay": "Why?",
+                "leadingNode": "merchant_02",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": "Of course, I am so sorry!",
+                "leadingNode": "exit",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    },
+    "merchant_02": {
+        "executeCode": "",
+        "speech": "Sir, am I going to have to contact security?",
+        "replies": [
+            {
+                "responseSay": "No, sorry.",
+                "leadingNode": "exit",
+                "requirement": "",
+                "executeCode": ""
+            },
+            {
+                "responseSay": " I'll have you know I graduated top of my class...",
+                "leadingNode": "exit",
+                "requirement": "",
+                "executeCode": ""
+            }
+        ]
+    }
+}

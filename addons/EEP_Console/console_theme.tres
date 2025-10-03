@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cugwgqs1xtu4l"]
+
+[ext_resource type="FontFile" uid="uid://dpcer4rslpe6g" path="res://EEP_GameTools/Console/Fonts/NineBit.ttf" id="1_rqx5r"]
+
+[resource]
+default_font = ExtResource("1_rqx5r")
+default_font_size = 20
+Fonts/fonts/large = ExtResource("1_rqx5r")
+Fonts/fonts/normal = ExtResource("1_rqx5r")
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0

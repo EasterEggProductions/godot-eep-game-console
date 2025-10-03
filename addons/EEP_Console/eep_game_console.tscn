@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcl51slsjj1ab"]
+
+[ext_resource type="Theme" uid="uid://cugwgqs1xtu4l" path="res://addons/EEP_Console/console_theme.tres" id="1_506l7"]
+[ext_resource type="Script" uid="uid://bfhkph4xol6l2" path="res://addons/EEP_Console/EEP_GameConsole.gd" id="1_ruc4f"]
+[ext_resource type="Script" uid="uid://bl4002r2cq01o" path="res://addons/EEP_Console/questToken.gd" id="2_8v856"]
+
+[node name="EEP_GameConsole" type="Panel"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -500.0
+grow_horizontal = 2
+theme = ExtResource("1_506l7")
+script = ExtResource("1_ruc4f")
+
+[node name="console_out" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -35.42
+grow_horizontal = 2
+grow_vertical = 2
+vertical_alignment = 2
+autowrap_mode = 1
+clip_text = true
+
+[node name="console_in" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "enter a command, such as 'help'"
+keep_editing_on_text_submit = true
+select_all_on_focus = true
+caret_blink = true
+
+[node name="questToken" type="Node" parent="."]
+script = ExtResource("2_8v856")

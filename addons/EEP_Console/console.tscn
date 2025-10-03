@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx5tjov8br2uy"]
+
+[ext_resource type="Theme" uid="uid://cugwgqs1xtu4l" path="res://EEP_GameTools/Console/console_theme.tres" id="1_de1ea"]
+[ext_resource type="Script" uid="uid://bfhkph4xol6l2" path="res://EEP_GameTools/Console/EEP_GameConsole.gd" id="2_s82mv"]
+[ext_resource type="Script" uid="uid://bl4002r2cq01o" path="res://EEP_GameTools/Console/questToken.gd" id="3_ypd5j"]
+
+[node name="Control" type="CanvasLayer"]
+editor_description = "This was put under a CanvasLayer because in 2D space it was centered on world coordinates if it was just a panel.
+TODO, have commands pass through it"
+layer = 128
+
+[node name="EEP_GameConsole" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -500.0
+grow_horizontal = 2
+theme = ExtResource("1_de1ea")
+script = ExtResource("2_s82mv")
+
+[node name="console_out" type="Label" parent="EEP_GameConsole"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -35.42
+grow_horizontal = 2
+grow_vertical = 2
+vertical_alignment = 2
+autowrap_mode = 1
+clip_text = true
+
+[node name="console_in" type="LineEdit" parent="EEP_GameConsole"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "enter a command, such as 'help'"
+select_all_on_focus = true
+caret_blink = true
+
+[node name="questToken" type="Node" parent="EEP_GameConsole"]
+script = ExtResource("3_ypd5j")
