@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://vdw1ea4k0mop"]
+
+[ext_resource type="PackedScene" uid="uid://ejvbbkyexwhf" path="res://prefabs/main_menu.tscn" id="1_6jreh"]
+
+[node name="title_screen_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_menu" parent="." instance=ExtResource("1_6jreh")]
+layout_mode = 1

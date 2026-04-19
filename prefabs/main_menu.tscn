@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://ejvbbkyexwhf"]
+
+[ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_1n3ne"]
+[ext_resource type="Script" uid="uid://bq5f87komryrd" path="res://scripts/menu_goto.gd" id="2_fuj45"]
+[ext_resource type="PackedScene" uid="uid://dd18guh3idtqp" path="res://prefabs/other_menu.tscn" id="3_ndc6x"]
+[ext_resource type="PackedScene" uid="uid://di1svty3vj4vb" path="res://prefabs/speakeasy_demo_menu.tscn" id="4_ifsy8"]
+[ext_resource type="Script" uid="uid://bhf5genoigp66" path="res://scripts/sfx_button.gd" id="4_ndc6x"]
+[ext_resource type="PackedScene" uid="uid://1w46j6wejc1o" path="res://prefabs/options_menu.tscn" id="4_u8y11"]
+
+[sub_resource type="Gradient" id="Gradient_iqxut"]
+offsets = PackedFloat32Array(0.5538847, 0.9949875)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.23921569)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uwd5"]
+gradient = SubResource("Gradient_iqxut")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="main_menu" type="Control" node_paths=PackedStringArray("close_button", "focus_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1n3ne")
+close_button = NodePath("VBoxContainer/Button6")
+focus_button = NodePath("VBoxContainer/Button")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4uwd5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("parent_menu")]
+layout_mode = 2
+text = "Make Char"
+script = ExtResource("2_fuj45")
+menu = ExtResource("3_ndc6x")
+parent_menu = NodePath("../..")
+sfx_pressed = "ui_big_confirm"
+
+[node name="Button8" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("parent_menu")]
+layout_mode = 2
+text = "Speakeasy Demo"
+script = ExtResource("2_fuj45")
+menu = ExtResource("4_ifsy8")
+parent_menu = NodePath("../..")
+
+[node name="Button7" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("parent_menu")]
+layout_mode = 2
+text = "Options?"
+script = ExtResource("2_fuj45")
+menu = ExtResource("4_u8y11")
+parent_menu = NodePath("../..")
+
+[node name="Button6" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "A button"
+script = ExtResource("4_ndc6x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 179.0
+offset_right = 333.0
+offset_bottom = 303.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][font_size=69][b]Game Name[/b][/font_size]
+[i][u]Reloaded![/u][/i][/center]"

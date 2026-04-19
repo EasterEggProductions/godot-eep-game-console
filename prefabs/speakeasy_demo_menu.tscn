@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://di1svty3vj4vb"]
+
+[ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_6x0ut"]
+[ext_resource type="Script" uid="uid://bhf5genoigp66" path="res://scripts/sfx_button.gd" id="2_8iex1"]
+[ext_resource type="PackedScene" uid="uid://cdk8muufc4po2" path="res://addons/EEP_Speakeasy/speakeasy.tscn" id="3_8iex1"]
+
+[sub_resource type="Gradient" id="Gradient_iqxut"]
+offsets = PackedFloat32Array(0.5538847, 0.9949875)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.23921569)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uwd5"]
+gradient = SubResource("Gradient_iqxut")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="speakeasy_demo_menu" type="Control" node_paths=PackedStringArray("close_button", "focus_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6x0ut")
+close_button = NodePath("Button6")
+focus_button = NodePath("")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4uwd5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -566.0
+offset_top = 508.0
+offset_right = 282.0
+offset_bottom = 632.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][font_size=69][b]End conversation to go[/b][/font_size]
+"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 544.0
+offset_right = 957.0
+offset_bottom = 575.0
+text = "Nothing"
+script = ExtResource("2_8iex1")
+
+[node name="Speakeasy_Dialog" parent="." instance=ExtResource("3_8iex1")]
+layout_mode = 1

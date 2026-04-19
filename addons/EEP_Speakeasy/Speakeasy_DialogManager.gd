@@ -1,5 +1,6 @@
 extends Panel
 
+## Speakeasy data node
 @export var deb_se : Node
 @onready var speech_out : RichTextLabel = $speech 
 @onready var responses : VBoxContainer = $responses

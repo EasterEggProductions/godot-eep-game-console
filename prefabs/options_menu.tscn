@@ -1,0 +1,1260 @@
+[gd_scene load_steps=5 format=3 uid="uid://1w46j6wejc1o"]
+
+[ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_dlsie"]
+[ext_resource type="Script" uid="uid://bhf5genoigp66" path="res://scripts/sfx_button.gd" id="2_kw8fs"]
+
+[sub_resource type="Gradient" id="Gradient_iqxut"]
+offsets = PackedFloat32Array(0.5538847, 0.9949875)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.23921569)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uwd5"]
+gradient = SubResource("Gradient_iqxut")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="other_menu" type="Control" node_paths=PackedStringArray("close_button", "focus_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dlsie")
+close_button = NodePath("Button6")
+focus_button = NodePath("")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4uwd5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 89.0
+offset_right = 333.0
+offset_bottom = 213.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][font_size=69][b]Options?[/b][/font_size]
+[i][u]OPTIONS?[/u][/i][/center]"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 577.0
+offset_right = 159.0
+offset_bottom = 608.0
+text = "Nothing"
+script = ExtResource("2_kw8fs")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -114.0
+offset_right = 394.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Gameplay" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Panel" type="Panel" parent="TabContainer/Gameplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Gameplay/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 380
+dragging_enabled = false
+drag_area_highlight_in_editor = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Difficulty" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Panel" type="Panel" parent="TabContainer/Difficulty"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Difficulty/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 380
+dragging_enabled = false
+drag_area_highlight_in_editor = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Difficulty/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Graphics" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Panel" type="Panel" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Graphics/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 380
+dragging_enabled = false
+drag_area_highlight_in_editor = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Graphics/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Audio" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Panel" type="Panel" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Audio/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 380
+dragging_enabled = false
+drag_area_highlight_in_editor = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control3"]
+layout_mode = 2
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control4" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control4"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control3" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control3"]
+layout_mode = 2
+
+[node name="Control5" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control5"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control6" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control10" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control10"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Firstofall"
+popup/item_0/id = 0
+popup/item_1/text = "Secondly"
+popup/item_1/id = 1
+popup/item_2/text = "Fourthly"
+popup/item_2/id = 2
+
+[node name="Control7" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control7"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control8" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control8"]
+layout_mode = 2
+
+[node name="Control9" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="Button" type="Button" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control9"]
+layout_mode = 2
+text = "BOOP"
+
+[node name="Control2" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control2"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+text = "Something neat"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/Panel/HSplitContainer/VBoxContainer2/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
