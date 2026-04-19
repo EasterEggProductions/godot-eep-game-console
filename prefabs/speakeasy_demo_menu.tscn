@@ -57,5 +57,42 @@ offset_bottom = 575.0
 text = "Nothing"
 script = ExtResource("2_8iex1")
 
-[node name="Speakeasy_Dialog" parent="." instance=ExtResource("3_8iex1")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Talk to greg" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Talk to Greg"
+script = ExtResource("2_8iex1")
+
+[node name="Talk To jim" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Talk to Jim"
+script = ExtResource("2_8iex1")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Talk To captains" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Talk to TKAS Cruiser Captains"
+script = ExtResource("2_8iex1")
+
+[node name="Speakeasy_Dialog" parent="." instance=ExtResource("3_8iex1")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/Talk to greg" to="Speakeasy_Dialog" method="conversation_start" binds= ["greg_insertion"]]
+[connection signal="pressed" from="VBoxContainer/Talk To jim" to="Speakeasy_Dialog" method="conversation_start" binds= ["jim_insertion"]]
+[connection signal="pressed" from="VBoxContainer/Talk To captains" to="Speakeasy_Dialog" method="conversation_start" binds= ["npc1_insertion_0"]]

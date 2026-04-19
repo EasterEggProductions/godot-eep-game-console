@@ -8,7 +8,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 	#make_test_data()
 	#loadFromFile('EEP_GameTools/Speakeasy/debug_testing.speakeasy') # NOTE old format from BlOm
-	loadFromFile('addons/EEP_Speakeasy/debug_testing.speakeasy')
+	#loadFromFile('addons/EEP_Speakeasy/debug_testing.speakeasy')
+	loadFromFile('addons/EEP_Speakeasy/initial.speakeasy')
+	loadFromFile('addons/EEP_Speakeasy/dater.speakeasy')
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,7 +50,8 @@ func loadFromFile(filepath : String) -> void:
 			seR.requirement = resp["requirement"]
 			seN.responses.append(seR)
 		new_nodes[key] = seN
-	nodes = new_nodes
+	nodes.merge(new_nodes)
+	#nodes = new_nodes
 
 func make_test_data() -> void:
 	var n1 : SpeakeasyNode = SpeakeasyNode.new()

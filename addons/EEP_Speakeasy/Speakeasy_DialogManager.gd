@@ -16,7 +16,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 	#go_to_node("node_01")
 	modulate = Color.TRANSPARENT
-	conversation_start("default")
+	#conversation_start("greg_insertion")
+	#conversation_start("npc1_insertion_0")
 
 func conversation_start(node : String) -> void:
 	go_to_node(node)
@@ -82,7 +83,7 @@ func requirements_check(reqs : String) -> bool:
 		var req : String = requirement
 		if len(requirement) > 0 and requirement[0] == "!":
 			req = requirement.substr(1)
-		var resp : String = console.get_node("EEP_GameConsole").ExecuteCommand(req) 
+		var resp : String = console.ExecuteCommand(req) 
 		if resp == "False":
 			print(requirement +" false")
 			if requirement[0] == "!":

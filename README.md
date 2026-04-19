@@ -78,7 +78,7 @@ func executeCommand(args: PackedStringArray) -> String:
 ```
 
 ## Speakeasy 
-This is a simple conversation tree and node based NPC dialog system.
+This is a simple conversation tree and node based NPC dialog system. Currently it can load data from json files, but the included files have the extension ".speakeasy" which Godot does not natively recognize. A custom resource plugin and dialog editor will be added in the future to remedy this. For now just use .json files and Godot should include them with exports (that being the main issue).
 
 ## Feather Audio Manager (FAM)
 Feather is a sonomancer, and this tool is built to manage in game music, and allow one off sound effects for things like UI. 
