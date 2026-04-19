@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcfr777q8nee3"
+path="res://.godot/imported/BGM Dungeon Loop.ogg-1777146b16e66d045f1350d3503a9200.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/EEP_FeatherAudioManager/music/BGM Dungeon Loop.ogg"
+dest_files=["res://.godot/imported/BGM Dungeon Loop.ogg-1777146b16e66d045f1350d3503a9200.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

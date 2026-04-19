@@ -18,3 +18,4 @@ config/features=PackedStringArray("4.5")
 [autoload]
 
 console="*res://addons/EEP_Console/eep_game_console.tscn"
+FAM="*res://addons/EEP_FeatherAudioManager/FeatherAudioManager.gd"

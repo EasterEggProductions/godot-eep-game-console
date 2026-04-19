@@ -76,3 +76,14 @@ func executeCommand(args: PackedStringArray) -> String:
 		returnable = "True"
 	return returnable
 ```
+
+## Speakeasy 
+This is a simple conversation tree and node based NPC dialog system.
+
+## Feather Audio Manager (FAM)
+Feather is a sonomancer, and this tool is built to manage in game music, and allow one off sound effects for things like UI. 
+
+Later it will expand to include things such as:
+
+* Environmental and mood based music switching 
+* Combat tempo music mixing

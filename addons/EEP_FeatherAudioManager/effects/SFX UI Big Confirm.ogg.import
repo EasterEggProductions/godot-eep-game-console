@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctodqx85o56qv"
+path="res://.godot/imported/SFX UI Big Confirm.ogg-a8c161935daa0450533f28822b7d3bad.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/EEP_FeatherAudioManager/effects/SFX UI Big Confirm.ogg"
+dest_files=["res://.godot/imported/SFX UI Big Confirm.ogg-a8c161935daa0450533f28822b7d3bad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

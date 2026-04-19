@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://17cocvgxvhwx"
+path="res://.godot/imported/SFX UI Navigate.ogg-3fd938c3b45c132072d47c2ecb2317fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/EEP_FeatherAudioManager/effects/SFX UI Navigate.ogg"
+dest_files=["res://.godot/imported/SFX UI Navigate.ogg-3fd938c3b45c132072d47c2ecb2317fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
