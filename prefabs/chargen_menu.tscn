@@ -1,0 +1,409 @@
+[gd_scene load_steps=23 format=3 uid="uid://xt7d3j05sbe4"]
+
+[ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_v1prj"]
+[ext_resource type="Script" uid="uid://ds0firedkigh7" path="res://scripts/sfx_line_edit.gd" id="2_0lxys"]
+[ext_resource type="Script" uid="uid://bhf5genoigp66" path="res://scripts/sfx_button.gd" id="2_3yfac"]
+[ext_resource type="Script" uid="uid://bcu2wehl6trvh" path="res://scripts/sfx_h_slider.gd" id="3_4vldv"]
+[ext_resource type="Script" uid="uid://cf3qibnj3jr17" path="res://scripts/sfx_option_button.gd" id="4_fnxcp"]
+[ext_resource type="Script" uid="uid://b55fxw1dkiajd" path="res://scripts/portrait_controller_thing.gd" id="6_cgk0h"]
+
+[sub_resource type="Gradient" id="Gradient_iqxut"]
+offsets = PackedFloat32Array(0.5538847, 0.9949875)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.23921569)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uwd5"]
+gradient = SubResource("Gradient_iqxut")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_fx0ga"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0frq"]
+gradient = SubResource("Gradient_fx0ga")
+fill = 2
+fill_from = Vector2(0.32905984, 0.44444445)
+fill_to = Vector2(0.31196582, 0.42735043)
+repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_nwur4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kvbe7"]
+gradient = SubResource("Gradient_nwur4")
+fill_from = Vector2(0.4957265, 0.491453)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ab1j4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s25ry"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rr5jl"]
+width = 64
+height = 64
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_s25ry")
+color_ramp = SubResource("Gradient_ab1j4")
+
+[sub_resource type="Gradient" id="Gradient_lq5o7"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lmncy"]
+gradient = SubResource("Gradient_lq5o7")
+fill = 1
+fill_from = Vector2(0.22649573, 0.25213677)
+fill_to = Vector2(0.7008547, 0.7777778)
+repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_xgtho"]
+offsets = PackedFloat32Array(0, 0.25076452, 0.49541286, 0.7461774, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0.93333334, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vomuk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tba4d"]
+noise = SubResource("FastNoiseLite_vomuk")
+color_ramp = SubResource("Gradient_xgtho")
+
+[sub_resource type="Gradient" id="Gradient_5uy3h"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0o23w"]
+gradient = SubResource("Gradient_5uy3h")
+fill = 2
+fill_from = Vector2(0.60683763, 0.60683763)
+fill_to = Vector2(0.88461536, 0.9230769)
+
+[node name="chargen_menu" type="Control" node_paths=PackedStringArray("close_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1prj")
+close_button = NodePath("back button")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4uwd5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 17.0
+offset_right = 333.0
+offset_bottom = 141.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][font_size=69][b]WHOMST[/b][/font_size]
+[i]Will you be?[/i][/center]"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 214.0
+offset_top = -490.0
+offset_right = -214.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 444.5625
+offset_bottom = 48.0
+placeholder_text = "Type In a name..."
+script = ExtResource("2_0lxys")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 57.0
+offset_right = 445.0
+offset_bottom = 198.0
+
+[node name="Label" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Gumption:"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 4.0
+offset_right = 423.0
+offset_bottom = 20.0
+script = ExtResource("3_4vldv")
+
+[node name="Label2" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 78.0
+offset_bottom = 58.0
+text = "Moxie:"
+horizontal_alignment = 2
+
+[node name="HSlider2" type="HSlider" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 39.0
+offset_right = 423.0
+offset_bottom = 55.0
+script = ExtResource("3_4vldv")
+
+[node name="Label3" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_top = 71.0
+offset_right = 78.0
+offset_bottom = 94.0
+text = "Grit:"
+horizontal_alignment = 2
+
+[node name="HSlider3" type="HSlider" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 75.0
+offset_right = 423.0
+offset_bottom = 91.0
+script = ExtResource("3_4vldv")
+
+[node name="Label4" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_top = 109.0
+offset_right = 78.0
+offset_bottom = 132.0
+text = "Dexterity:"
+horizontal_alignment = 2
+
+[node name="HSlider4" type="HSlider" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 113.0
+offset_right = 423.0
+offset_bottom = 129.0
+script = ExtResource("3_4vldv")
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 213.0
+offset_right = 445.0
+offset_bottom = 399.0
+
+[node name="OptionButton" type="OptionButton" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 17.0
+offset_right = 256.0
+offset_bottom = 48.0
+item_count = 3
+popup/item_0/text = "Fighter"
+popup/item_0/id = 0
+popup/item_1/text = "Wizard"
+popup/item_1/id = 1
+popup/item_2/text = "Blizzard"
+popup/item_2/id = 2
+script = ExtResource("4_fnxcp")
+
+[node name="Label" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 21.0
+offset_right = 77.0
+offset_bottom = 44.0
+text = "Class:"
+horizontal_alignment = 2
+
+[node name="OptionButton2" type="OptionButton" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 72.0
+offset_right = 257.0
+offset_bottom = 103.0
+item_count = 3
+popup/item_0/text = "Indy 500"
+popup/item_0/id = 0
+popup/item_1/text = "Formula 1"
+popup/item_1/id = 1
+popup/item_2/text = "Horse"
+popup/item_2/id = 2
+
+[node name="Label2" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 76.0
+offset_right = 77.0
+offset_bottom = 99.0
+text = "Race:"
+horizontal_alignment = 2
+
+[node name="OptionButton3" type="OptionButton" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 129.0
+offset_right = 258.0
+offset_bottom = 160.0
+item_count = 6
+popup/item_0/text = "Man"
+popup/item_0/id = 0
+popup/item_1/text = "Man (Refurbished)"
+popup/item_1/id = 1
+popup/item_2/text = "Man (not a real)"
+popup/item_2/id = 2
+popup/item_3/text = "Femboy"
+popup/item_3/id = 3
+popup/item_4/text = "Whatever THAT is"
+popup/item_4/id = 4
+popup/item_5/text = "Kalashnikov"
+popup/item_5/id = 5
+
+[node name="Label3" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 133.0
+offset_right = 78.0
+offset_bottom = 156.0
+text = "Gender:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 8.0
+offset_right = 423.0
+offset_bottom = 179.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=10]Abilities[/font_size][/center]"
+
+[node name="Button" type="Button" parent="Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Intentional rhyme"
+script = ExtResource("2_3yfac")
+
+[node name="Button2" type="Button" parent="Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Small Talk"
+script = ExtResource("2_3yfac")
+
+[node name="Button3" type="Button" parent="Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Fire Magic"
+script = ExtResource("2_3yfac")
+
+[node name="Button4" type="Button" parent="Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Fire Extinguisher"
+script = ExtResource("2_3yfac")
+
+[node name="char view" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/char view"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 237.0
+offset_bottom = 271.0
+texture = SubResource("GradientTexture2D_u0frq")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="Panel/char view"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 275.0
+offset_right = 238.0
+offset_bottom = 298.0
+text = "Portrait (just pretend)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/char view"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 304.0
+offset_right = 237.0
+offset_bottom = 379.0
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/char view/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+script = ExtResource("2_3yfac")
+sfx_pressed = "ui_down"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/char view/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/char view/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+script = ExtResource("2_3yfac")
+sfx_pressed = "ui_up"
+
+[node name="Portrait controller thing" type="Node" parent="Panel/char view" node_paths=PackedStringArray("portrait_area")]
+script = ExtResource("6_cgk0h")
+portraits = Array[Texture2D]([SubResource("GradientTexture2D_kvbe7"), SubResource("NoiseTexture2D_rr5jl"), SubResource("GradientTexture2D_lmncy"), SubResource("NoiseTexture2D_tba4d"), SubResource("GradientTexture2D_0o23w")])
+portrait_area = NodePath("../TextureRect")
+
+[node name="back button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -60.0
+offset_right = 83.0
+offset_bottom = -29.0
+grow_vertical = 0
+text = "Back"
+script = ExtResource("2_3yfac")
+sfx_pressed = "ui_back"
+
+[node name="back button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -64.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Done"
+script = ExtResource("2_3yfac")
+sfx_pressed = "ui_big_confirm"
+
+[connection signal="pressed" from="Panel/char view/HBoxContainer/Button" to="Panel/char view/Portrait controller thing" method="_inc_portrait" binds= [-1]]
+[connection signal="pressed" from="Panel/char view/HBoxContainer/Button2" to="Panel/char view/Portrait controller thing" method="_inc_portrait" binds= [1]]

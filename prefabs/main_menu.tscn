@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ejvbbkyexwhf"]
+[gd_scene load_steps=10 format=3 uid="uid://ejvbbkyexwhf"]
 
 [ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_1n3ne"]
 [ext_resource type="Script" uid="uid://bq5f87komryrd" path="res://scripts/menu_goto.gd" id="2_fuj45"]
+[ext_resource type="PackedScene" uid="uid://xt7d3j05sbe4" path="res://prefabs/chargen_menu.tscn" id="3_5bm13"]
 [ext_resource type="PackedScene" uid="uid://dd18guh3idtqp" path="res://prefabs/other_menu.tscn" id="3_ndc6x"]
 [ext_resource type="PackedScene" uid="uid://di1svty3vj4vb" path="res://prefabs/speakeasy_demo_menu.tscn" id="4_ifsy8"]
 [ext_resource type="Script" uid="uid://bhf5genoigp66" path="res://scripts/sfx_button.gd" id="4_ndc6x"]
@@ -55,11 +56,18 @@ grow_vertical = 2
 layout_mode = 2
 text = "Make Char"
 script = ExtResource("2_fuj45")
-menu = ExtResource("3_ndc6x")
+menu = ExtResource("3_5bm13")
 parent_menu = NodePath("../..")
 sfx_pressed = "ui_big_confirm"
 
 [node name="Button8" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("parent_menu")]
+layout_mode = 2
+text = "Other Menu"
+script = ExtResource("2_fuj45")
+menu = ExtResource("3_ndc6x")
+parent_menu = NodePath("../..")
+
+[node name="Button9" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("parent_menu")]
 layout_mode = 2
 text = "Speakeasy Demo"
 script = ExtResource("2_fuj45")

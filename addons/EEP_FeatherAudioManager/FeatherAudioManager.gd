@@ -23,6 +23,9 @@ func _ready():
 	effects["ui_big_confirm"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Big Confirm.ogg")
 	effects["ui_confirm"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Confirm.ogg")
 	effects["ui_navigate"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Navigate.ogg")
+	effects["ui_up"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_up.ogg")
+	effects["ui_down"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_down.ogg")
+	effects["ui_back"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_back.ogg")
 
 	# TODO - Come up with a better way of handling these sounds. We want them to be handled by name, so they 
 	# can be swapped out later if need be, so a better system for loading an managing that is needed, perhaps
