@@ -87,3 +87,7 @@ Later it will expand to include things such as:
 
 * Environmental and mood based music switching 
 * Combat tempo music mixing
+
+## Contributors
+bird-emoji
+KaleTheQuick
