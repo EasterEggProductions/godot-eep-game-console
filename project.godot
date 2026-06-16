@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="EEP Game Console"
 config/description="A Godot implementation of the Easter Egg Productions game console. Various other tools link to it, and it is loaded as a singleton, so it must be activated as an autoload. "
 run/main_scene="uid://71y5j04d14xq"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.6")
 
 [autoload]
 

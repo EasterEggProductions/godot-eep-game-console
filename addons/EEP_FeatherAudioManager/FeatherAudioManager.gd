@@ -16,16 +16,16 @@ var songs = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Load in example music files
-	songs["dungeon_loop"] = load("res://addons/EEP_FeatherAudioManager/music/BGM Dungeon Loop.ogg")
-	songs["town_loop"] = load("res://addons/EEP_FeatherAudioManager/music/BGM Town Loop.ogg")
+	load_song("res://addons/EEP_FeatherAudioManager/music/BGM Dungeon Loop.ogg", "dungeon_loop")
+	load_song("res://addons/EEP_FeatherAudioManager/music/BGM Town Loop.ogg", "town_loop")
 
 	# load in example effects 
-	effects["ui_big_confirm"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Big Confirm.ogg")
-	effects["ui_confirm"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Confirm.ogg")
-	effects["ui_navigate"] = load("res://addons/EEP_FeatherAudioManager/effects/SFX UI Navigate.ogg")
-	effects["ui_up"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_up.ogg")
-	effects["ui_down"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_down.ogg")
-	effects["ui_back"] = load("res://addons/EEP_FeatherAudioManager/effects/ui_back.ogg")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/SFX UI Big Confirm.ogg","ui_big_confirm")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/SFX UI Confirm.ogg","ui_confirm")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/SFX UI Navigate.ogg","ui_navigate")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/ui_up.ogg","ui_up")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/ui_down.ogg","ui_down")
+	load_effect("res://addons/EEP_FeatherAudioManager/effects/ui_back.ogg","ui_back")
 
 	# TODO - Come up with a better way of handling these sounds. We want them to be handled by name, so they 
 	# can be swapped out later if need be, so a better system for loading an managing that is needed, perhaps
@@ -37,7 +37,6 @@ func _ready():
 	music_aud.process_mode = Node.PROCESS_MODE_ALWAYS # keep processing during pause
 	music_aud.bus = "Music"
 	add_child(music_aud)
-	play_song("town_loop")
 	register_with_console()
 
 ## Plays a specific song
@@ -58,6 +57,23 @@ func play_effect(effect_name : String):
 		effect.play()
 		effect.connect("finished", effect.queue_free)
 
+func load_song(resource_path : String, songname=""):
+	if songname == "":
+		songname = resource_path.substr(resource_path.rfind("/")+1)
+	var n_stream : AudioStream = load(resource_path)
+	if n_stream != null:
+		songs[songname] = n_stream
+	else:
+		printerr("Failed to load song %s at resource path:\n%s" % [songname, resource_path])
+
+func load_effect(resource_path : String, effname=""):
+	if effname == "":
+		effname = resource_path.substr(resource_path.rfind("/")+1)
+	var n_stream : AudioStream = load(resource_path)
+	if n_stream != null:
+		effects[effname] = n_stream
+	else:
+		printerr("Failed to load effect %s at resource path:\n%s" % [effname, resource_path])
 
 
 func _console_command(commands : PackedStringArray) -> String:
