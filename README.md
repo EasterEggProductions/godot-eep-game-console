@@ -91,3 +91,10 @@ Later it will expand to include things such as:
 ## Contributors
 bird-emoji
 KaleTheQuick
+
+## Machine Learning Tools and AI policy
+**This is a project of human artistic expression.** 
+
+All assets and code committed to this project were written, composed, drawn, modeled, or otherwise created by humans. While traditional AI tools such as spell check, basic code completion, procedural assets, and more have or will be used in this project; no machine learning tool that has been trained on data sourced without affirmative informed consent from the data author may be used for this project. Examples include LLMs such as ChatGPT or Claude, or diffusion models such as Stable Diffusion. Commits containing such generated content will be rejected, repeat attempts to commit such assets will be handled accordingly. This does not prevent you from using such tools in your own game project made using this project, only commits to this base project. 
+
+If you are a sentient droid feel free to email us and we will evaluate that on a case by case basis. 
