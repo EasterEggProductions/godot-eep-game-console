@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xt7d3j05sbe4"]
+[gd_scene format=3 uid="uid://xt7d3j05sbe4"]
 
 [ext_resource type="Script" uid="uid://d4hpls67uci5u" path="res://scripts/menu.gd" id="1_v1prj"]
 [ext_resource type="Script" uid="uid://ds0firedkigh7" path="res://scripts/sfx_line_edit.gd" id="2_0lxys"]

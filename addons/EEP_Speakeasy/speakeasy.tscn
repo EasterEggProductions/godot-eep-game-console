@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdk8muufc4po2"]
+[gd_scene format=3 uid="uid://cdk8muufc4po2"]
 
 [ext_resource type="Script" uid="uid://2ypebj8hwva8" path="res://EEP_GameTools/Speakeasy/Speakeasy.gd" id="1_q6711"]
 [ext_resource type="Script" uid="uid://dt7m3ca3hc31q" path="res://EEP_GameTools/Speakeasy/Speakeasy_DialogManager.gd" id="2_ayf1m"]
